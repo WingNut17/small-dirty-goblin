@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvt640njweppt"]
+
+[ext_resource type="PackedScene" uid="uid://dhpb4alqh5mvi" path="res://scenes/characters/Player.tscn" id="1_300d4"]
+[ext_resource type="Texture2D" uid="uid://ba0e6xeav3iyp" path="res://assets/sprites/characters/mc_run.png" id="2_4o8cx"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_300d4")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 35)
+texture = ExtResource("2_4o8cx")
