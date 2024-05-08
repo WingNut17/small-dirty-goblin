@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dhpb4alqh5mvi"]
+[gd_scene load_steps=18 format=3 uid="uid://dhpb4alqh5mvi"]
 
 [ext_resource type="Texture2D" uid="uid://ba0e6xeav3iyp" path="res://assets/sprites/characters/mc_run.png" id="1_ddcwm"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_x4ulb"]
@@ -145,23 +145,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45wuk"]
 size = Vector2(8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcgs7"]
-
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_x4ulb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_esaby")
-animation = &"run_side"
+animation = &"run_forward"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_45wuk")
 
-[node name="Interact" type="Area2D" parent="."]
-visible = false
-
-[node name="InteractArea" type="CollisionShape2D" parent="Interact"]
-scale = Vector2(1.1, 1.1)
-shape = SubResource("RectangleShape2D_dcgs7")
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

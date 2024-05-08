@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://rjl1nkadjioj"]
+
+[ext_resource type="Script" path="res://scripts/Room.gd" id="1_mnuhs"]
+[ext_resource type="Texture2D" uid="uid://cbfo2tvyla5mv" path="res://assets/sprites/other/bedroom.png" id="2_ian44"]
+[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_45fxl"]
+
+[sub_resource type="Gradient" id="Gradient_gd20k"]
+offsets = PackedFloat32Array(0.344156, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rh4il"]
+noise_type = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b7c3r"]
+width = 11
+height = 37
+in_3d_space = true
+color_ramp = SubResource("Gradient_gd20k")
+noise = SubResource("FastNoiseLite_rh4il")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4mpk"]
+size = Vector2(16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvsqg"]
+size = Vector2(9, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21y72"]
+size = Vector2(13, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssdt"]
+size = Vector2(22, 36)
+
+[node name="Room" type="StaticBody2D"]
+script = ExtResource("1_mnuhs")
+
+[node name="Bedroom" type="Sprite2D" parent="."]
+texture = ExtResource("2_ian44")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(16, -32, 1, -32, 1, -27, -10, -27, -10, -1, -33, -1, -33, 43, 14, 43, 14, 48, 32, 48, 32, 9, 19, 9, 19, -1, 16, -1, 16, -31, 39, -31, 39, 53, -38, 53, -38, -53, 40, -53, 40, -31, 16, -31)
+
+[node name="WindowLight" type="PointLight2D" parent="."]
+position = Vector2(9.5, -25.75)
+scale = Vector2(1, 0.932432)
+shadow_enabled = true
+texture = SubResource("NoiseTexture2D_b7c3r")
+
+[node name="Door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(23, 45)
+shape = SubResource("RectangleShape2D_d4mpk")
+
+[node name="TrashCan" type="Area2D" parent="."]
+script = ExtResource("3_45fxl")
+action_name = "toggle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan"]
+position = Vector2(23.5, 3.5)
+shape = SubResource("RectangleShape2D_rvsqg")
+
+[node name="Window" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+position = Vector2(9.5, -43)
+shape = SubResource("RectangleShape2D_21y72")
+
+[node name="Bed" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
+position = Vector2(-21, -19)
+shape = SubResource("RectangleShape2D_1ssdt")
+
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]

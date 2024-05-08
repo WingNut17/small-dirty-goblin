@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var look = $Looking_At
+const DIALOGUE_BOX = preload("res://scenes/dialogue_box.tscn")
+#@onready var interaction_shape = $InteractionArea/InteractionShape
+
 
 # character speed
 const SPEED = 7.5
@@ -10,6 +14,7 @@ var motion = Vector2()
 var last_direction = Vector2()
 var input_vector = Vector2()
 var sprinting = false
+
 
 func _physics_process(delta):
 	sprinting = false
@@ -28,18 +33,27 @@ func _physics_process(delta):
 	
 	if input_vector:
 		if sprinting:
+<<<<<<< Updated upstream
 			velocity.x = motion[0] * SPRINT_SPEED
 			velocity.y = motion[1] * SPRINT_SPEED
+=======
+			velocity.x = motion[0] * SPEED * 2
+			velocity.y = motion[1] * SPEED * 2
+			
+>>>>>>> Stashed changes
 		else:
 			velocity.x = motion[0] * SPEED
 			velocity.y = motion[1] * SPEED
 		last_direction = input_vector
+	
 	else:
 		velocity.x = move_toward(motion[0], 0, SPEED)
 		velocity.y = move_toward(motion[1], 0, SPEED)
 	
-	move_and_slide()
+	#var angle = rad_to_deg(atan2(last_direction.y, last_direction.x))
+	#interaction_shape.rotation_degrees = angle
 	
+	move_and_slide()
 	handle_animations()
 
 func handle_animations():
@@ -66,3 +80,4 @@ func handle_animations():
 		sprite.flip_h = false  
 	
 	sprite.play(animation)
+

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn4cpwq3jbt58"]
+
+[ext_resource type="Texture2D" uid="uid://c84okoyiu43fw" path="res://assets/sprites/DialogueBox.png" id="1_y5uvn"]
+[ext_resource type="FontFile" uid="uid://cse2kdqv7assb" path="res://assets/fonts/PixeloidMono-d94EV.ttf" id="2_am5nc"]
+
+[node name="DialogueBox" type="Sprite2D"]
+texture = ExtResource("1_y5uvn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -170.0
+offset_top = -31.0
+offset_right = 173.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_am5nc")
+theme_override_font_sizes/font_size = 9
+autowrap_mode = 2
