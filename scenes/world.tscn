@@ -1,20 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvt640njweppt"]
+[gd_scene load_steps=10 format=3 uid="uid://bvt640njweppt"]
 
 [ext_resource type="PackedScene" uid="uid://dhpb4alqh5mvi" path="res://scenes/characters/Player.tscn" id="1_300d4"]
-[ext_resource type="Script" path="res://scenes/Room.gd" id="1_irq1q"]
+[ext_resource type="Script" path="res://scripts/Room.gd" id="1_irq1q"]
 [ext_resource type="Texture2D" uid="uid://cbfo2tvyla5mv" path="res://assets/sprites/other/bedroom.png" id="1_tbkvj"]
+[ext_resource type="Script" path="res://scripts/PointLight2D.gd" id="3_vo12m"]
 
 [sub_resource type="Gradient" id="Gradient_gd20k"]
 offsets = PackedFloat32Array(0.344156, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_rh4il"]
+noise_type = 5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b7c3r"]
 width = 11
 height = 37
 in_3d_space = true
-seamless = true
-seamless_blend_skirt = 0.357
 color_ramp = SubResource("Gradient_gd20k")
 noise = SubResource("FastNoiseLite_rh4il")
 
@@ -41,6 +41,7 @@ position = Vector2(9.5, -29.5)
 scale = Vector2(1, 0.945946)
 shadow_enabled = true
 texture = SubResource("NoiseTexture2D_b7c3r")
+script = ExtResource("3_vo12m")
 
 [node name="Area2D" type="Area2D" parent="Room"]
 

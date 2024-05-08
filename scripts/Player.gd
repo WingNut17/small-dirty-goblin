@@ -28,8 +28,8 @@ func _physics_process(delta):
 	
 	if input_vector:
 		if sprinting:
-			velocity.x = motion[0] * SPRINT_SPEED
-			velocity.y = motion[1] * SPRINT_SPEED
+			velocity.x = motion[0] * SPEED * 2
+			velocity.y = motion[1] * SPEED * 2
 		else:
 			velocity.x = motion[0] * SPEED
 			velocity.y = motion[1] * SPEED
