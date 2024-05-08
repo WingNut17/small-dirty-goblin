@@ -9,11 +9,12 @@ README.md::TextFile::-1::1715133420::0::1::::<><>::
 ::res://assets/sprites/characters/::1715133740
 mc_run.png::CompressedTexture2D::2438329569372157711::1715139238::1715139240::1::::<><>::
 ::res://assets/sprites/other/::1715133781
+bedroom.png::CompressedTexture2D::4854251385618426517::1715142818::1715142822::1::::<><>::
 ::res://assets/sprites/particles/::1715133750
 ::res://assets/sprites/tilemaps/::1715133773
 ::res://scenes/::1715133790
-world.tscn::PackedScene::3901544925822623533::1715139096::0::1::::<><>::uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn<>uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png
+world.tscn::PackedScene::3901544925822623533::1715142706::0::1::::<><>::uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
 ::res://scenes/characters/::1715135266
-Player.tscn::PackedScene::7681662145602798370::1715139078::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
+Player.tscn::PackedScene::7681662145602798370::1715142704::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
 ::res://scripts/::1715133796
 Player.gd::GDScript::-1::1715139078::0::1::::<>CharacterBody2D<>::
