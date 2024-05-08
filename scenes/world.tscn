@@ -37,8 +37,8 @@ visible = false
 polygon = PackedVector2Array(16, -32, 1, -32, 1, -27, -10, -27, -10, -1, -33, -1, -33, 43, 14, 43, 14, 48, 32, 48, 32, 9, 19, 9, 19, -1, 16, -1, 16, -31, 39, -31, 39, 53, -38, 53, -38, -53, 40, -53, 40, -31, 16, -31)
 
 [node name="PointLight2D" type="PointLight2D" parent="Room"]
-position = Vector2(9.5, -29.5)
-scale = Vector2(1, 0.945946)
+position = Vector2(9.5, -25.75)
+scale = Vector2(1, 0.932432)
 shadow_enabled = true
 texture = SubResource("NoiseTexture2D_b7c3r")
 script = ExtResource("3_vo12m")
