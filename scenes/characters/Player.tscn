@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhpb4alqh5mvi"]
+[gd_scene load_steps=18 format=3 uid="uid://dhpb4alqh5mvi"]
 
 [ext_resource type="Texture2D" uid="uid://ba0e6xeav3iyp" path="res://assets/sprites/characters/mc_run.png" id="1_ddcwm"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_x4ulb"]
@@ -15,9 +15,17 @@ region = Rect2(144, 0, 16, 18)
 atlas = ExtResource("1_ddcwm")
 region = Rect2(48, 0, 16, 18)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucmvh"]
+atlas = ExtResource("1_ddcwm")
+region = Rect2(160, 0, 16, 18)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_miaf1"]
 atlas = ExtResource("1_ddcwm")
 region = Rect2(112, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e07pr"]
+atlas = ExtResource("1_ddcwm")
+region = Rect2(176, 0, 16, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tthmh"]
 atlas = ExtResource("1_ddcwm")
@@ -63,18 +71,24 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m53vn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucmvh")
 }],
 "loop": true,
 "name": &"idle_back",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_miaf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e07pr")
 }],
 "loop": true,
 "name": &"idle_side",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -137,7 +151,7 @@ script = ExtResource("1_x4ulb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_esaby")
-animation = &"idle_side"
+animation = &"idle_back"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
