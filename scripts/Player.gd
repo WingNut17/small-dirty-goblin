@@ -3,15 +3,22 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 
 # character speed
-const SPEED = 10.0
+const SPEED = 7.5
+const SPRINT_SPEED = 10.0
+
 var motion = Vector2()
 var last_direction = Vector2()
 var input_vector = Vector2()
+var sprinting = false
 
 func _physics_process(delta):
+	sprinting = false
 	# Get the left/right up/down input directions
 	input_vector = Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"), Input.get_action_strength("down") - Input.get_action_strength("up"))
 	
+	if Input.is_action_pressed("shift"):
+		sprinting = true
+		
 	# if theyre going diagonally, normalize
 	if input_vector.length() > 1:
 		input_vector = input_vector.normalized()
@@ -20,8 +27,12 @@ func _physics_process(delta):
 	motion = input_vector * SPEED
 	
 	if input_vector:
-		velocity.x = motion[0] * SPEED
-		velocity.y = motion[1] * SPEED
+		if sprinting:
+			velocity.x = motion[0] * SPRINT_SPEED
+			velocity.y = motion[1] * SPRINT_SPEED
+		else:
+			velocity.x = motion[0] * SPEED
+			velocity.y = motion[1] * SPEED
 		last_direction = input_vector
 	else:
 		velocity.x = move_toward(motion[0], 0, SPEED)
