@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdevahs2k08fc"]
+
+[ext_resource type="Script" path="res://scripts/TrashCan.gd" id="1_dhlqd"]
+[ext_resource type="PackedScene" uid="uid://c157sm4o7eyod" path="res://interaction/interaction area/interaction_area.tscn" id="3_wstky"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kkmir"]
+radius = 6.5192
+
+[node name="TrashCan" type="Node2D"]
+script = ExtResource("1_dhlqd")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_wstky")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_kkmir")

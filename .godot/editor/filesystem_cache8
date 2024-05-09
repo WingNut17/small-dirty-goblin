@@ -1,51 +1,53 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1715133354
-icon.png::CompressedTexture2D::3606760720937426671::1715114622::1715187158::1::::<><>::
+icon.png::CompressedTexture2D::3606760720937426671::1715198636::1715198636::1::::<><>::
 README.md::TextFile::-1::1715133420::0::1::::<><>::
-<<<<<<< Updated upstream
-=======
-::res://aseprite project files/::1715145645
->>>>>>> Stashed changes
+::res://aseprite project files/::1715198635
 ::res://assets/::1715133706
-::res://assets/fonts/::1715133733
-PixeloidMono-d94EV.ttf::FontFile::6046155463914616781::1707705804::1715184270::1::::<><>::
-PixeloidSans-mLxMm.ttf::FontFile::2730720530254219023::1707705804::1715184270::1::::<><>::
-PixeloidSansBold-PKnYd.ttf::FontFile::8607556489663700911::1707705804::1715184270::1::::<><>::
+::res://assets/fonts/::1715198635
+PixeloidMono-d94EV.ttf::FontFile::6046155463914616781::1715198636::1715198636::1::::<><>::
+PixeloidSans-mLxMm.ttf::FontFile::2730720530254219023::1715198636::1715198636::1::::<><>::
+PixeloidSansBold-PKnYd.ttf::FontFile::8607556489663700911::1715198636::1715198636::1::::<><>::
 ::res://assets/music/::1715133712
 ::res://assets/sound effects/::1715133718
 ::res://assets/sprites/::1715133723
-DialogueBox.png::CompressedTexture2D::7149808830940374232::1715186452::1715186454::1::::<><>::
+DialogueBox.png::CompressedTexture2D::7149808830940374232::1715198636::1715198636::1::::<><>::
 ::res://assets/sprites/characters/::1715133740
-mc_run.png::CompressedTexture2D::2438329569372157711::1715139238::1715139240::1::::<><>::
+mc_run.png::CompressedTexture2D::2438329569372157711::1715198636::1715199212::1::::<><>::
 ::res://assets/sprites/other/::1715133781
 bedroom.png::CompressedTexture2D::4854251385618426517::1715142818::1715142822::1::::<><>::
+bedroom_window.png::CompressedTexture2D::6966218753970890177::1715209560::1715209562::1::::<><>::
+trashcan.png::CompressedTexture2D::7867233270033536517::1715203710::1715203726::1::::<><>::
+truck.png::CompressedTexture2D::6370356229787578191::1715213360::1715213360::1::::<><>::
 ::res://assets/sprites/particles/::1715133750
-::res://assets/sprites/tilemaps/::1715133773
-outside.png::CompressedTexture2D::6417060938229061859::1715197818::1715197820::1::::<><>::
-::res://interaction/::1715191361
-InteractionManager.tscn::PackedScene::1271796084954167262::1715196588::0::1::::<><>::res://interaction/InteractionManager.gd<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
-InteractionManager.gd::GDScript::-1::1715192866::0::1::::<>Node2D<>::
-::res://interaction/interaction area/::1715191371
-interaction_area.tscn::PackedScene::6661658398414226271::1715196588::0::1::::<><>::res://interaction/interaction area/interaction_area.gd
-interaction_area.gd::GDScript::-1::1715193268::0::1::::InteractionArea<>Area2D<>::
+::res://assets/sprites/tilemaps/::1715198635
+outside.png::CompressedTexture2D::6417060938229061859::1715201956::1715201958::1::::<><>::
+::res://interaction/::1715198635
+InteractionManager.gd::GDScript::-1::1715211220::0::1::::<>Node2D<>::
+InteractionManager.gdshader::Shader::-1::1715213418::0::1::::<><>::
+InteractionManager.tscn::PackedScene::1271796084954167262::1715211648::0::1::::<><>::res://interaction/InteractionManager.gd<>res://interaction/InteractionManager.gdshader<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
+::res://interaction/interaction area/::1715198635
+interaction_area.gd::GDScript::-1::1715211220::0::1::::InteractionArea<>Area2D<>::
+interaction_area.tscn::PackedScene::6661658398414226271::1715211648::0::1::::<><>::res://interaction/interaction area/interaction_area.gd
 ::res://scenes/::1715133790
-<<<<<<< Updated upstream
-next_room.tscn::PackedScene::8782711041093227740::1715143898::0::1::::<><>::
-Area2D.gd::GDScript::-1::1715144084::0::1::::<>Area2D<>::
-world.tscn::PackedScene::3901544925822623533::1715143990::0::1::::<><>::uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn<>uid://cbfo2tvyla5mv::::res://assets/sprites/other/bedroom.png
+dialogue_box.tscn::PackedScene::8131733375650419073::1715210082::0::1::::<><>::uid://c84okoyiu43fw::::res://assets/sprites/DialogueBox.png<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
+next_room.tscn::PackedScene::8782711041093227740::1715213298::0::1::::<><>::uid://cxoqb54jsh0nn::::res://assets/sprites/tilemaps/outside.png<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
+truck.tscn::PackedScene::1844784831284524962::1715213402::0::1::::<><>::uid://cw033o4h6q7yp::::res://assets/sprites/other/truck.png
+world.tscn::PackedScene::2349808239902015174::1715213078::0::1::::<><>::uid://rjl1nkadjioj::::res://scenes/rooms/bedroom.tscn<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
 ::res://scenes/characters/::1715135266
-Player.tscn::PackedScene::7681662145602798370::1715143988::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
+Player.tscn::PackedScene::7681662145602798370::1715213078::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
+::res://scenes/interactables/::1715209504
+bedroom_window.tscn::PackedScene::8551055269648941146::1715211648::0::1::::<><>::res://scripts/bedroom_window.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
+bed_interactable.tscn::PackedScene::3546198264626854116::1715213078::0::1::::<><>::res://scripts/bed_interactable.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
+bedroom_door.tscn::PackedScene::5713349347870371941::1715213418::0::1::::<><>::res://scenes/interactables/bedroom_door.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
+bedroom_door.gd::GDScript::-1::1715212516::0::1::::<>Node2D<>::
+trash_can.tscn::PackedScene::4992940862875705336::1715210578::0::1::::<><>::res://scripts/TrashCan.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
+::res://scenes/rooms/::1715198635
+bedroom.tscn::PackedScene::1212504757451015421::1715213078::0::1::::<><>::res://scripts/Room.gd<>uid://cbfo2tvyla5mv::::res://assets/sprites/other/bedroom.png<>uid://cnnua8s7arfu8::::res://scenes/interactables/bedroom_door.tscn<>uid://bqr2mqu3ysc7m::::res://scenes/interactables/bed_interactable.tscn<>uid://cdevahs2k08fc::::res://scenes/interactables/trash_can.tscn<>uid://dt3gvpnq8yy0y::::res://scenes/interactables/bedroom_window.tscn
 ::res://scripts/::1715133796
-Player.gd::GDScript::-1::1715143310::0::1::::<>CharacterBody2D<>::
-=======
-dialogue_box.tscn::PackedScene::8131733375650419073::1715196588::0::1::::<><>::uid://c84okoyiu43fw::::res://assets/sprites/DialogueBox.png<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
-next_room.tscn::PackedScene::8782711041093227740::1715197560::0::1::::<><>::uid://cxoqb54jsh0nn::::res://assets/sprites/tilemaps/outside.png<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
-world.tscn::PackedScene::3901544925822623533::1715197558::0::1::::<><>::uid://rjl1nkadjioj::::res://scenes/rooms/bedroom.tscn<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
-::res://scenes/characters/::1715135266
-Player.tscn::PackedScene::7681662145602798370::1715197558::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
-::res://scenes/rooms/::1715186555
-bedroom.tscn::PackedScene::1212504757451015421::1715197560::0::1::::<><>::res://scripts/Room.gd<>uid://cbfo2tvyla5mv::::res://assets/sprites/other/bedroom.png<>res://interaction/interaction area/interaction_area.gd
-::res://scripts/::1715133796
-Player.gd::GDScript::-1::1715196482::0::1::::<>CharacterBody2D<>::
-Room.gd::GDScript::-1::1715196566::0::1::::<>StaticBody2D<>::
->>>>>>> Stashed changes
+bedroom_window.gd::GDScript::-1::1715212312::0::1::::<>Node2D<>::
+bed_interactable.gd::GDScript::-1::1715212348::0::1::::<>Node2D<>::
+next_room.gd::GDScript::-1::1715200708::0::1::::<>Node2D<>::
+Player.gd::GDScript::-1::1715211264::0::1::::<>CharacterBody2D<>::
+Room.gd::GDScript::-1::1715211220::0::1::::<>StaticBody2D<>::
+TrashCan.gd::GDScript::-1::1715212292::0::1::::<>Node2D<>::

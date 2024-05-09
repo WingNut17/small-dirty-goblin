@@ -1,8 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://rjl1nkadjioj"]
 
-[ext_resource type="Script" path="res://scripts/Room.gd" id="1_mnuhs"]
+[ext_resource type="Script" path="res://scripts/Room.gd" id="1_77fwd"]
 [ext_resource type="Texture2D" uid="uid://cbfo2tvyla5mv" path="res://assets/sprites/other/bedroom.png" id="2_ian44"]
-[ext_resource type="Script" path="res://interaction/interaction area/interaction_area.gd" id="3_45fxl"]
+[ext_resource type="PackedScene" uid="uid://cnnua8s7arfu8" path="res://scenes/interactables/bedroom_door.tscn" id="3_4n3d2"]
+[ext_resource type="PackedScene" uid="uid://bqr2mqu3ysc7m" path="res://scenes/interactables/bed_interactable.tscn" id="3_o21k2"]
+[ext_resource type="PackedScene" uid="uid://cdevahs2k08fc" path="res://scenes/interactables/trash_can.tscn" id="3_yn76d"]
+[ext_resource type="PackedScene" uid="uid://dt3gvpnq8yy0y" path="res://scenes/interactables/bedroom_window.tscn" id="4_xis02"]
 
 [sub_resource type="Gradient" id="Gradient_gd20k"]
 offsets = PackedFloat32Array(0.344156, 1)
@@ -17,20 +20,11 @@ in_3d_space = true
 color_ramp = SubResource("Gradient_gd20k")
 noise = SubResource("FastNoiseLite_rh4il")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4mpk"]
-size = Vector2(16, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvsqg"]
-size = Vector2(9, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_21y72"]
-size = Vector2(13, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssdt"]
-size = Vector2(22, 36)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dr53"]
+size = Vector2(13, 17)
 
 [node name="Room" type="StaticBody2D"]
-script = ExtResource("1_mnuhs")
+script = ExtResource("1_77fwd")
 
 [node name="Bedroom" type="Sprite2D" parent="."]
 texture = ExtResource("2_ian44")
@@ -45,30 +39,31 @@ scale = Vector2(1, 0.932432)
 shadow_enabled = true
 texture = SubResource("NoiseTexture2D_b7c3r")
 
-[node name="Door" type="Area2D" parent="."]
+[node name="Interactables" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(23, 45)
-shape = SubResource("RectangleShape2D_d4mpk")
+[node name="BedroomDoor" parent="Interactables" instance=ExtResource("3_4n3d2")]
+position = Vector2(23, 42)
 
-[node name="TrashCan" type="Area2D" parent="."]
-script = ExtResource("3_45fxl")
-action_name = "toggle"
+[node name="CollisionShape2D" parent="Interactables/BedroomDoor/InteractionArea" index="0"]
+position = Vector2(0, 3.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan"]
+[node name="Bed" parent="Interactables" instance=ExtResource("3_o21k2")]
+position = Vector2(-21, -24)
+
+[node name="CollisionShape2D" parent="Interactables/Bed/InteractionArea" index="0"]
+position = Vector2(0, 6)
+
+[node name="TrashCan" parent="Interactables" instance=ExtResource("3_yn76d")]
 position = Vector2(23.5, 3.5)
-shape = SubResource("RectangleShape2D_rvsqg")
 
-[node name="Window" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+[node name="BedroomWindow" parent="Interactables" instance=ExtResource("4_xis02")]
 position = Vector2(9.5, -43)
-shape = SubResource("RectangleShape2D_21y72")
 
-[node name="Bed" type="Area2D" parent="."]
+[node name="CollisionShape2D" parent="Interactables/BedroomWindow/InteractionArea" index="0"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_0dr53")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
-position = Vector2(-21, -19)
-shape = SubResource("RectangleShape2D_1ssdt")
-
-[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
+[editable path="Interactables/BedroomDoor"]
+[editable path="Interactables/Bed"]
+[editable path="Interactables/TrashCan"]
+[editable path="Interactables/BedroomWindow"]

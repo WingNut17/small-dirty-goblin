@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt3gvpnq8yy0y"]
+
+[ext_resource type="Script" path="res://scripts/bedroom_window.gd" id="1_mpi3y"]
+[ext_resource type="PackedScene" uid="uid://c157sm4o7eyod" path="res://interaction/interaction area/interaction_area.tscn" id="2_jjkpb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gb8jm"]
+radius = 11.5
+
+[node name="BedroomWindow" type="Node2D"]
+script = ExtResource("1_mpi3y")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_jjkpb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_gb8jm")

@@ -4,13 +4,15 @@
 [ext_resource type="FontFile" uid="uid://cse2kdqv7assb" path="res://assets/fonts/PixeloidMono-d94EV.ttf" id="2_am5nc"]
 
 [node name="DialogueBox" type="Sprite2D"]
+position = Vector2(0, 64)
 texture = ExtResource("1_y5uvn")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -170.0
-offset_top = -31.0
-offset_right = 173.0
-offset_bottom = 33.0
+offset_left = -169.0
+offset_top = -32.0
+offset_right = 174.0
+offset_bottom = 32.0
+scale = Vector2(0.985013, 1.03311)
 theme_override_fonts/font = ExtResource("2_am5nc")
 theme_override_font_sizes/font_size = 9
 autowrap_mode = 2
