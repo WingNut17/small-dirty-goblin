@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://seckb3qr5wpi"]
 
 [ext_resource type="Script" path="res://interaction/InteractionManager.gd" id="1_itpcm"]
-[ext_resource type="Shader" path="res://interaction/InteractionManager.gdshader" id="2_mnegv"]
+[ext_resource type="Shader" path="res://shaders/InteractionManager.gdshader" id="2_mnegv"]
 [ext_resource type="FontFile" uid="uid://cse2kdqv7assb" path="res://assets/fonts/PixeloidMono-d94EV.ttf" id="2_ts8jf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8b15"]
 shader = ExtResource("2_mnegv")
-shader_parameter/amplitude = 10.0
-shader_parameter/frequency = 1.0
+shader_parameter/amplitude = 3.0
+shader_parameter/frequency = 2.0
 
 [node name="InteractionManager" type="Node2D"]
 scale = Vector2(0.5, 0.5)

@@ -10,16 +10,11 @@ const SPEED = 7.5
 var motion = Vector2()
 var last_direction = Vector2()
 var input_vector = Vector2()
-var sprinting = false
 
 
 func _physics_process(_delta):
-	sprinting = false
 	# Get the left/right up/down input directions
 	input_vector = Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"), Input.get_action_strength("down") - Input.get_action_strength("up"))
-	
-	if Input.is_action_pressed("shift"):
-		sprinting = true
 		
 	# if theyre going diagonally, normalize
 	if input_vector.length() > 1:
@@ -30,13 +25,8 @@ func _physics_process(_delta):
 	
 	# if a button is pressed
 	if input_vector:
-		if sprinting:
-			velocity.x = motion[0] * SPEED * 2
-			velocity.y = motion[1] * SPEED * 2
-			
-		else:
-			velocity.x = motion[0] * SPEED
-			velocity.y = motion[1] * SPEED
+		velocity.x = motion[0] * SPEED
+		velocity.y = motion[1] * SPEED
 		last_direction = input_vector
 	
 	else:

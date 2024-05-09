@@ -13,6 +13,7 @@ script = ExtResource("1_pttd4")
 [node name="BloodMist" parent="." instance=ExtResource("2_htv5u")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 texture = ExtResource("1_3isam")
 
 [node name="Area2D" type="Area2D" parent="."]
