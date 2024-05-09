@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5v804fsbto5p"]
+
+[ext_resource type="Texture2D" uid="uid://b0sydvvmoxvtb" path="res://assets/sprites/particles/BloodSpray.png" id="1_42txy"]
+[ext_resource type="Material" uid="uid://n112j7fv7kuq" path="res://tres/blood_explosion.tres" id="1_f8lar"]
+[ext_resource type="Texture2D" uid="uid://d4hmkhyddbgve" path="res://assets/sprites/particles/BloodPop.png" id="2_axib2"]
+[ext_resource type="Texture2D" uid="uid://gi6tm1ookc8w" path="res://assets/sprites/particles/BloodChunk.png" id="3_jkyf4"]
+[ext_resource type="Texture2D" uid="uid://dl0e6ewka188s" path="res://assets/sprites/particles/BoneChunks.png" id="4_hwg5n"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4e4s7"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="BloodMist" type="CPUParticles2D"]
+material = ExtResource("1_f8lar")
+emitting = false
+lifetime = 0.5
+one_shot = true
+texture = ExtResource("1_42txy")
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 20)
+initial_velocity_max = 100.0
+angular_velocity_max = 100.0
+orbit_velocity_min = -0.2
+orbit_velocity_max = 0.2
+linear_accel_min = -100.0
+radial_accel_min = -100.0
+radial_accel_max = 94.95
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_max = 3.0
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="BloodSprites" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_4e4s7")
+emitting = false
+lifetime = 0.2
+one_shot = true
+texture = ExtResource("2_axib2")
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, 20)
+initial_velocity_max = 100.0
+angle_min = -720.0
+angle_max = 720.0
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="BloodChunk" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_4e4s7")
+emitting = false
+lifetime = 0.5
+one_shot = true
+texture = ExtResource("3_jkyf4")
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, 20)
+initial_velocity_max = 100.0
+angle_min = -720.0
+angle_max = 720.0
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="BoneChunk" type="CPUParticles2D" parent="."]
+material = ExtResource("1_f8lar")
+emitting = false
+lifetime = 0.75
+one_shot = true
+texture = ExtResource("4_hwg5n")
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, 20)
+initial_velocity_max = 200.0
+angle_min = -720.0
+angle_max = 720.0
+anim_speed_min = 1.0
+anim_speed_max = 1.0

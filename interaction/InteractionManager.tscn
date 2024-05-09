@@ -6,6 +6,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8b15"]
 shader = ExtResource("2_mnegv")
+shader_parameter/amplitude = 10.0
+shader_parameter/frequency = 1.0
 
 [node name="InteractionManager" type="Node2D"]
 scale = Vector2(0.5, 0.5)

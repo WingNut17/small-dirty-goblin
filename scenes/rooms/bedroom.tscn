@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://rjl1nkadjioj"]
+[gd_scene load_steps=12 format=3 uid="uid://rjl1nkadjioj"]
 
 [ext_resource type="Script" path="res://scripts/Room.gd" id="1_77fwd"]
 [ext_resource type="Texture2D" uid="uid://cbfo2tvyla5mv" path="res://assets/sprites/other/bedroom.png" id="2_ian44"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqr2mqu3ysc7m" path="res://scenes/interactables/bed_interactable.tscn" id="3_o21k2"]
 [ext_resource type="PackedScene" uid="uid://cdevahs2k08fc" path="res://scenes/interactables/trash_can.tscn" id="3_yn76d"]
 [ext_resource type="PackedScene" uid="uid://dt3gvpnq8yy0y" path="res://scenes/interactables/bedroom_window.tscn" id="4_xis02"]
+[ext_resource type="PackedScene" uid="uid://bxgvi337b5b2m" path="res://scenes/interactables/bedroom_clock.tscn" id="7_dvtw4"]
 
 [sub_resource type="Gradient" id="Gradient_gd20k"]
 offsets = PackedFloat32Array(0.344156, 1)
@@ -62,6 +63,9 @@ position = Vector2(9.5, -43)
 [node name="CollisionShape2D" parent="Interactables/BedroomWindow/InteractionArea" index="0"]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_0dr53")
+
+[node name="BedroomClock" parent="Interactables" instance=ExtResource("7_dvtw4")]
+position = Vector2(-4, -34)
 
 [editable path="Interactables/BedroomDoor"]
 [editable path="Interactables/Bed"]

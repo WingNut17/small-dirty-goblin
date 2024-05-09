@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxgvi337b5b2m"]
+
+[ext_resource type="Script" path="res://scripts/bedroom_clock.gd" id="1_1xiye"]
+[ext_resource type="PackedScene" uid="uid://c157sm4o7eyod" path="res://interaction/interaction area/interaction_area.tscn" id="1_mywx6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_to5wb"]
+radius = 8.0
+
+[node name="BedroomClock" type="Node2D"]
+script = ExtResource("1_1xiye")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_mywx6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_to5wb")

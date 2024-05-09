@@ -12,42 +12,66 @@ PixeloidSansBold-PKnYd.ttf::FontFile::8607556489663700911::1715198636::171519863
 ::res://assets/sound effects/::1715133718
 ::res://assets/sprites/::1715133723
 DialogueBox.png::CompressedTexture2D::7149808830940374232::1715198636::1715198636::1::::<><>::
+house.png::CompressedTexture2D::8786073240945837127::1715220346::1715220348::1::::<><>::
 ::res://assets/sprites/characters/::1715133740
-mc_run.png::CompressedTexture2D::2438329569372157711::1715198636::1715199212::1::::<><>::
+mc_run1.png::CompressedTexture2D::1921351193257204551::1715220778::1715220780::1::::<><>::
+mc_run2.png::CompressedTexture2D::9154681059260473032::1715220778::1715220780::1::::<><>::
+mc_run3.png::CompressedTexture2D::479673566105896546::1715220778::1715220780::1::::<><>::
+mc_run4.png::CompressedTexture2D::8123113121104381977::1715220778::1715220780::1::::<><>::
+mc_run5.png::CompressedTexture2D::7521404006565208832::1715220778::1715220780::1::::<><>::
+mc_run6.png::CompressedTexture2D::4719605483893745925::1715220778::1715220780::1::::<><>::
+mc_run7.png::CompressedTexture2D::7527652845667213200::1715220778::1715220780::1::::<><>::
+mc_run8.png::CompressedTexture2D::5168880608785629616::1715220780::1715220780::1::::<><>::
+mc_run9.png::CompressedTexture2D::6012497719204568990::1715220780::1715220780::1::::<><>::
+mc_run10.png::CompressedTexture2D::2426230904669892577::1715220780::1715220780::1::::<><>::
+mc_run11.png::CompressedTexture2D::8274371770804916391::1715220780::1715220780::1::::<><>::
+mc_run12.png::CompressedTexture2D::6727955925379362185::1715220780::1715220780::1::::<><>::
+mc_run.png::CompressedTexture2D::2438329569372157711::1715220838::1715220852::1::::<><>::
 ::res://assets/sprites/other/::1715133781
 bedroom.png::CompressedTexture2D::4854251385618426517::1715142818::1715142822::1::::<><>::
 bedroom_window.png::CompressedTexture2D::6966218753970890177::1715209560::1715209562::1::::<><>::
 trashcan.png::CompressedTexture2D::7867233270033536517::1715203710::1715203726::1::::<><>::
-truck.png::CompressedTexture2D::6370356229787578191::1715213360::1715213360::1::::<><>::
+truck.png::CompressedTexture2D::6370356229787578191::1715215274::1715215298::1::::<><>::
 ::res://assets/sprites/particles/::1715133750
+BloodBonesSprites.png::CompressedTexture2D::8749030194899267580::1715216322::1715216340::1::::<><>::
+BloodChunk.png::CompressedTexture2D::439564911820943600::1715217708::1715217728::1::::<><>::
+BloodPop.png::CompressedTexture2D::9209936027592026494::1715217684::1715217728::1::::<><>::
+BloodSpray.png::CompressedTexture2D::4179764275421204915::1715216338::1715216340::1::::<><>::
+BoneChunks.png::CompressedTexture2D::7983247247065784584::1715217728::1715217728::1::::<><>::
 ::res://assets/sprites/tilemaps/::1715198635
-outside.png::CompressedTexture2D::6417060938229061859::1715201956::1715201958::1::::<><>::
+outside.png::CompressedTexture2D::6417060938229061859::1715220090::1715220128::1::::<><>::
 ::res://interaction/::1715198635
-InteractionManager.gd::GDScript::-1::1715211220::0::1::::<>Node2D<>::
-InteractionManager.gdshader::Shader::-1::1715213418::0::1::::<><>::
-InteractionManager.tscn::PackedScene::1271796084954167262::1715211648::0::1::::<><>::res://interaction/InteractionManager.gd<>res://interaction/InteractionManager.gdshader<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
+InteractionManager.gd::GDScript::-1::1715214640::0::1::::<>Node2D<>::
+InteractionManager.gdshader::Shader::-1::1715220836::0::1::::<><>::
+InteractionManager.tscn::PackedScene::1271796084954167262::1715220630::0::1::::<><>::res://interaction/InteractionManager.gd<>res://interaction/InteractionManager.gdshader<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
 ::res://interaction/interaction area/::1715198635
 interaction_area.gd::GDScript::-1::1715211220::0::1::::InteractionArea<>Area2D<>::
 interaction_area.tscn::PackedScene::6661658398414226271::1715211648::0::1::::<><>::res://interaction/interaction area/interaction_area.gd
 ::res://scenes/::1715133790
+blood_explosion.tscn::PackedScene::6923908446692458859::1715218742::0::1::::<><>::uid://b0sydvvmoxvtb::::res://assets/sprites/particles/BloodSpray.png<>uid://n112j7fv7kuq::::res://tres/blood_explosion.tres<>uid://d4hmkhyddbgve::::res://assets/sprites/particles/BloodPop.png<>uid://gi6tm1ookc8w::::res://assets/sprites/particles/BloodChunk.png<>uid://dl0e6ewka188s::::res://assets/sprites/particles/BoneChunks.png
 dialogue_box.tscn::PackedScene::8131733375650419073::1715210082::0::1::::<><>::uid://c84okoyiu43fw::::res://assets/sprites/DialogueBox.png<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
-next_room.tscn::PackedScene::8782711041093227740::1715213298::0::1::::<><>::uid://cxoqb54jsh0nn::::res://assets/sprites/tilemaps/outside.png<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
-truck.tscn::PackedScene::1844784831284524962::1715213402::0::1::::<><>::uid://cw033o4h6q7yp::::res://assets/sprites/other/truck.png
-world.tscn::PackedScene::2349808239902015174::1715213078::0::1::::<><>::uid://rjl1nkadjioj::::res://scenes/rooms/bedroom.tscn<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
+next_room.tscn::PackedScene::8782711041093227740::1715220628::0::1::::<><>::uid://cxoqb54jsh0nn::::res://assets/sprites/tilemaps/outside.png<>res://scripts/next_room.gd<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn<>uid://dxgblwchph072::::res://assets/sprites/house.png
+truck.tscn::PackedScene::1844784831284524962::1715220630::0::1::::<><>::uid://cw033o4h6q7yp::::res://assets/sprites/other/truck.png<>res://scripts/truck.gd<>uid://c5v804fsbto5p::::res://scenes/blood_explosion.tscn
+world.tscn::PackedScene::2349808239902015174::1715220630::0::1::::<><>::uid://rjl1nkadjioj::::res://scenes/rooms/bedroom.tscn<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
 ::res://scenes/characters/::1715135266
-Player.tscn::PackedScene::7681662145602798370::1715213078::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
+Player.tscn::PackedScene::7681662145602798370::1715220628::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
 ::res://scenes/interactables/::1715209504
+bedroom_clock.tscn::PackedScene::4014441212456318246::1715220630::0::1::::<><>::res://scripts/bedroom_clock.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
+bedroom_door.tscn::PackedScene::5713349347870371941::1715220630::0::1::::<><>::res://scripts/bedroom_door.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
 bedroom_window.tscn::PackedScene::8551055269648941146::1715211648::0::1::::<><>::res://scripts/bedroom_window.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
-bed_interactable.tscn::PackedScene::3546198264626854116::1715213078::0::1::::<><>::res://scripts/bed_interactable.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
-bedroom_door.tscn::PackedScene::5713349347870371941::1715213418::0::1::::<><>::res://scenes/interactables/bedroom_door.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
-bedroom_door.gd::GDScript::-1::1715212516::0::1::::<>Node2D<>::
+bed_interactable.tscn::PackedScene::3546198264626854116::1715220630::0::1::::<><>::res://scripts/bed_interactable.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
 trash_can.tscn::PackedScene::4992940862875705336::1715210578::0::1::::<><>::res://scripts/TrashCan.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
 ::res://scenes/rooms/::1715198635
-bedroom.tscn::PackedScene::1212504757451015421::1715213078::0::1::::<><>::res://scripts/Room.gd<>uid://cbfo2tvyla5mv::::res://assets/sprites/other/bedroom.png<>uid://cnnua8s7arfu8::::res://scenes/interactables/bedroom_door.tscn<>uid://bqr2mqu3ysc7m::::res://scenes/interactables/bed_interactable.tscn<>uid://cdevahs2k08fc::::res://scenes/interactables/trash_can.tscn<>uid://dt3gvpnq8yy0y::::res://scenes/interactables/bedroom_window.tscn
+bedroom.tscn::PackedScene::1212504757451015421::1715220628::0::1::::<><>::res://scripts/Room.gd<>uid://cbfo2tvyla5mv::::res://assets/sprites/other/bedroom.png<>uid://cnnua8s7arfu8::::res://scenes/interactables/bedroom_door.tscn<>uid://bqr2mqu3ysc7m::::res://scenes/interactables/bed_interactable.tscn<>uid://cdevahs2k08fc::::res://scenes/interactables/trash_can.tscn<>uid://dt3gvpnq8yy0y::::res://scenes/interactables/bedroom_window.tscn<>uid://bxgvi337b5b2m::::res://scenes/interactables/bedroom_clock.tscn
 ::res://scripts/::1715133796
-bedroom_window.gd::GDScript::-1::1715212312::0::1::::<>Node2D<>::
-bed_interactable.gd::GDScript::-1::1715212348::0::1::::<>Node2D<>::
-next_room.gd::GDScript::-1::1715200708::0::1::::<>Node2D<>::
-Player.gd::GDScript::-1::1715211264::0::1::::<>CharacterBody2D<>::
+bedroom_clock.gd::GDScript::-1::1715215594::0::1::::<>Node2D<>::
+bedroom_door.gd::GDScript::-1::1715214638::0::1::::<>Node2D<>::
+bedroom_window.gd::GDScript::-1::1715214638::0::1::::<>Node2D<>::
+bed_interactable.gd::GDScript::-1::1715214638::0::1::::<>Node2D<>::
+next_room.gd::GDScript::-1::1715218786::0::1::::<>Node2D<>::
+Player.gd::GDScript::-1::1715214720::0::1::::<>CharacterBody2D<>::
 Room.gd::GDScript::-1::1715211220::0::1::::<>StaticBody2D<>::
 TrashCan.gd::GDScript::-1::1715212292::0::1::::<>Node2D<>::
+truck.gd::GDScript::-1::1715218590::0::1::::<>Node2D<>::
+::res://tres/::1715218027
+blood_explosion.tres::CanvasItemMaterial::967756169547738192::1715218030::0::1::::<><>::
