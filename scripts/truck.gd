@@ -9,7 +9,7 @@ extends Node2D
 func _ready():
 	blood_mist.hide()
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	player.get_node("AnimatedSprite2D").hide()
 
 	blood_mist.show()

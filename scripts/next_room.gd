@@ -16,7 +16,7 @@ func _process(delta):
 	if truck_spawn2:
 		truck_instance2.global_position += Vector2(500 * delta, 0)
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_entered(_area):
 	if truck_spawn1:
 		await get_tree().create_timer(2).timeout
 		truck_spawn1 = false
@@ -30,7 +30,7 @@ func _on_area_2d_area_entered(area):
 	
 	truck_spawn1 = false
 
-func _on_road_2_area_entered(area):
+func _on_road_2_area_entered(_area):
 	truck_spawn2 = true
 	
 	self.add_child(truck_instance2)

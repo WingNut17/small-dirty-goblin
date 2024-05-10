@@ -39,7 +39,7 @@ BloodPop.png::CompressedTexture2D::9209936027592026494::1715274128::1715274128::
 BloodSpray.png::CompressedTexture2D::4179764275421204915::1715274128::1715274128::1::::<><>::
 BoneChunks.png::CompressedTexture2D::7983247247065784584::1715274128::1715274128::1::::<><>::
 ::res://assets/sprites/tilemaps/::1715274127
-house_layout.png::CompressedTexture2D::4311066287772567702::1715308852::1715308854::1::::<><>::
+house_layout.png::CompressedTexture2D::4311066287772567702::1715319558::1715319560::1::::<><>::
 outside.png::CompressedTexture2D::6417060938229061859::1715278774::1715278776::1::::<><>::
 ::res://interaction/::1715273773
 InteractionManager.gd::GDScript::-1::1715317302::0::1::::<>Node2D<>::
@@ -49,14 +49,13 @@ interaction_area.gd::GDScript::-1::1715274128::0::1::::InteractionArea<>Area2D<>
 interaction_area.tscn::PackedScene::6661658398414226271::1715274128::0::1::::<><>::res://interaction/interaction area/interaction_area.gd
 ::res://scenes/::1715133790
 blood_explosion.tscn::PackedScene::6923908446692458859::1715274128::0::1::::<><>::uid://b0sydvvmoxvtb::::res://assets/sprites/particles/BloodSpray.png<>uid://n112j7fv7kuq::::res://tres/blood_explosion_animation.tres<>uid://d4hmkhyddbgve::::res://assets/sprites/particles/BloodPop.png<>uid://cykusnbejo6ga::::res://tres/blood_explosion_scale_curve.tres<>uid://gi6tm1ookc8w::::res://assets/sprites/particles/BloodChunk.png<>uid://dl0e6ewka188s::::res://assets/sprites/particles/BoneChunks.png
-dialogue_box.tscn::PackedScene::8131733375650419073::1715274128::0::1::::<><>::uid://c84okoyiu43fw::::res://assets/sprites/DialogueBox.png<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
-inside_house.tscn::PackedScene::1252088324747010899::1715317550::0::1::::<><>::uid://b2okvqqnlgqn3::::res://assets/sprites/tilemaps/house_layout.png<>uid://bxgvi337b5b2m::::res://scenes/interactables/bedroom_clock.tscn<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn<>uid://cnnua8s7arfu8::::res://scenes/interactables/bedroom_door.tscn<>uid://dt3gvpnq8yy0y::::res://scenes/interactables/bedroom_window.tscn<>uid://bqr2mqu3ysc7m::::res://scenes/interactables/bed_interactable.tscn<>uid://cdevahs2k08fc::::res://scenes/interactables/trash_can.tscn<>uid://vrbj7s5e1bpn::::res://scenes/interactables/HallwayDoortoMCRoom.tscn<>res://scripts/interactables/HallwayDoortoStepSisRoom.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn<>res://scripts/interactables/HallwayDoortoParentRoom.gd<>res://scripts/interactables/HallwayDoortoMainRoom.gd<>res://scripts/interactables/HallwayDoortoBathroom.gd<>res://scripts/interactables/StepSisDoortoHallway.gd<>res://scripts/interactables/StepParentsDoortoHallway.gd<>res://scripts/interactables/BathroomDoortoHallway.gd<>res://scripts/interactables/MainRoomDoortoHallway.gd<>res://scripts/interactables/MainRoomDoortoOutside.gd
-next_room.tscn::PackedScene::8782711041093227740::1715317650::0::1::::<><>::uid://cxoqb54jsh0nn::::res://assets/sprites/tilemaps/outside.png<>res://scripts/next_room.gd<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn<>uid://dxgblwchph072::::res://assets/sprites/house.png<>res://scenes/DoortoInsideHouse.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
-DoortoInsideHouse.gd::GDScript::-1::1715317266::0::1::::<>Node2D<>::
-truck.tscn::PackedScene::1844784831284524962::1715317550::0::1::::<><>::uid://cw033o4h6q7yp::::res://assets/sprites/other/truck.png<>res://scripts/truck.gd<>uid://c5v804fsbto5p::::res://scenes/blood_explosion.tscn
+dialogue_box.tscn::PackedScene::8131733375650419073::1715319434::0::1::::<><>::uid://c84okoyiu43fw::::res://assets/sprites/DialogueBox.png<>uid://cse2kdqv7assb::::res://assets/fonts/PixeloidMono-d94EV.ttf
+inside_house.tscn::PackedScene::1252088324747010899::1715319434::0::1::::<><>::uid://b2okvqqnlgqn3::::res://assets/sprites/tilemaps/house_layout.png<>uid://bxgvi337b5b2m::::res://scenes/interactables/bedroom_clock.tscn<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn<>uid://cnnua8s7arfu8::::res://scenes/interactables/bedroom_door.tscn<>uid://dt3gvpnq8yy0y::::res://scenes/interactables/bedroom_window.tscn<>uid://bqr2mqu3ysc7m::::res://scenes/interactables/bed_interactable.tscn<>uid://cdevahs2k08fc::::res://scenes/interactables/trash_can.tscn<>uid://vrbj7s5e1bpn::::res://scenes/interactables/HallwayDoortoMCRoom.tscn<>res://scripts/interactables/HallwayDoortoStepSisRoom.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn<>res://scripts/interactables/HallwayDoortoParentRoom.gd<>res://scripts/interactables/HallwayDoortoMainRoom.gd<>res://scripts/interactables/HallwayDoortoBathroom.gd<>res://scripts/interactables/StepSisDoortoHallway.gd<>res://scripts/interactables/StepParentsDoortoHallway.gd<>res://scripts/interactables/BathroomDoortoHallway.gd<>res://scripts/interactables/MainRoomDoortoHallway.gd<>res://scripts/interactables/MainRoomDoortoOutside.gd
+next_room.tscn::PackedScene::8782711041093227740::1715319434::0::1::::<><>::uid://cxoqb54jsh0nn::::res://assets/sprites/tilemaps/outside.png<>res://scripts/next_room.gd<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn<>uid://dxgblwchph072::::res://assets/sprites/house.png<>res://scripts/interactables/DoortoInsideHouse.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
+truck.tscn::PackedScene::1844784831284524962::1715319434::0::1::::<><>::uid://cw033o4h6q7yp::::res://assets/sprites/other/truck.png<>res://scripts/truck.gd<>uid://c5v804fsbto5p::::res://scenes/blood_explosion.tscn
 world.tscn::PackedScene::2349808239902015174::1715274128::0::1::::<><>::uid://rjl1nkadjioj::::res://scenes/rooms/bedroom.tscn<>uid://dhpb4alqh5mvi::::res://scenes/characters/Player.tscn
 ::res://scenes/characters/::1715135266
-Player.tscn::PackedScene::7681662145602798370::1715315914::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
+Player.tscn::PackedScene::7681662145602798370::1715319436::0::1::::<><>::uid://ba0e6xeav3iyp::::res://assets/sprites/characters/mc_run.png<>res://scripts/Player.gd
 ::res://scenes/interactables/::1715274127
 bedroom_clock.tscn::PackedScene::4014441212456318246::1715315916::0::1::::<><>::res://scripts/interactables/bedroom_clock.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
 bedroom_door.tscn::PackedScene::5713349347870371941::1715315930::0::1::::<><>::res://scripts/interactables/bedroom_door.gd<>uid://c157sm4o7eyod::::res://interaction/interaction area/interaction_area.tscn
@@ -67,16 +66,17 @@ trash_can.tscn::PackedScene::4992940862875705336::1715315968::0::1::::<><>::res:
 ::res://scenes/rooms/::1715274127
 bedroom.tscn::PackedScene::1212504757451015421::1715315914::0::1::::<><>::res://scripts/Room.gd<>uid://cbfo2tvyla5mv::::res://assets/sprites/other/bedroom.png<>uid://cnnua8s7arfu8::::res://scenes/interactables/bedroom_door.tscn<>uid://bqr2mqu3ysc7m::::res://scenes/interactables/bed_interactable.tscn<>uid://cdevahs2k08fc::::res://scenes/interactables/trash_can.tscn<>uid://dt3gvpnq8yy0y::::res://scenes/interactables/bedroom_window.tscn<>uid://bxgvi337b5b2m::::res://scenes/interactables/bedroom_clock.tscn
 ::res://scripts/::1715133796
-next_room.gd::GDScript::-1::1715317220::0::1::::<>Node2D<>::
+next_room.gd::GDScript::-1::1715319034::0::1::::<>Node2D<>::
 Player.gd::GDScript::-1::1715316838::0::1::::<>CharacterBody2D<>::
 Room.gd::GDScript::-1::1715274128::0::1::::<>StaticBody2D<>::
-truck.gd::GDScript::-1::1715316766::0::1::::<>Node2D<>::
+truck.gd::GDScript::-1::1715319034::0::1::::<>Node2D<>::
 ::res://scripts/interactables/::1715311157
 BathroomDoortoHallway.gd::GDScript::-1::1715314996::0::1::::<>Node2D<>::
 bedroom_clock.gd::GDScript::-1::1715274128::0::1::::<>Node2D<>::
 bedroom_door.gd::GDScript::-1::1715313064::0::1::::<>Node2D<>::
 bedroom_window.gd::GDScript::-1::1715274128::0::1::::<>Node2D<>::
 bed_interactable.gd::GDScript::-1::1715274128::0::1::::<>Node2D<>::
+DoortoInsideHouse.gd::GDScript::-1::1715317266::0::1::::<>Node2D<>::
 HallwayDoortoBathroom.gd::GDScript::-1::1715313772::0::1::::<>Node2D<>::
 HallwayDoortoMainRoom.gd::GDScript::-1::1715313680::0::1::::<>Node2D<>::
 HallwayDoortoMCRoom.gd::GDScript::-1::1715313048::0::1::::<>Node2D<>::
@@ -88,9 +88,9 @@ StepParentsDoortoHallway.gd::GDScript::-1::1715314820::0::1::::<>Node2D<>::
 StepSisDoortoHallway.gd::GDScript::-1::1715314144::0::1::::<>Node2D<>::
 TrashCan.gd::GDScript::-1::1715274128::0::1::::<>Node2D<>::
 ::res://shaders/::1715274127
-InteractionManager.gdshader::Shader::-1::1715317650::0::1::::<><>::
-next_room.gdshader::Shader::-1::1715317650::0::1::::<><>::
-outline.gdshader::Shader::-1::1715317650::0::1::::<><>::
+InteractionManager.gdshader::Shader::-1::1715319436::0::1::::<><>::
+next_room.gdshader::Shader::-1::1715319436::0::1::::<><>::
+outline.gdshader::Shader::-1::1715319436::0::1::::<><>::
 ::res://tres/::1715274127
 blood_explosion_animation.tres::CanvasItemMaterial::967756169547738192::1715274128::0::1::::<><>::
 blood_explosion_scale_curve.tres::Curve::6479264560927905800::1715274128::0::1::::<><>::
