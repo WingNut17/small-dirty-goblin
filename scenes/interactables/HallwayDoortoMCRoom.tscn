@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://vrbj7s5e1bpn"]
+
+[ext_resource type="Script" path="res://scripts/interactables/HallwayDoortoMCRoom.gd" id="1_i4y7b"]
+[ext_resource type="PackedScene" uid="uid://c157sm4o7eyod" path="res://interaction/interaction area/interaction_area.tscn" id="2_073my"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk7ik"]
+size = Vector2(20, 5)
+
+[node name="HallwayDoortoMcRoom" type="Node2D"]
+script = ExtResource("1_i4y7b")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_073my")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_jk7ik")

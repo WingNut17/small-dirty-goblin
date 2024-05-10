@@ -17,3 +17,6 @@ func _on_area_2d_body_entered(body):
 	blood_sprites.emitting = true
 	blood_chunk.emitting = true
 	bone_chunk.emitting = true
+	
+	player.health = 0
+

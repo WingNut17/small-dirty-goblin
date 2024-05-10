@@ -1,0 +1,280 @@
+[gd_scene load_steps=30 format=3 uid="uid://r3ryg2we762b"]
+
+[ext_resource type="Texture2D" uid="uid://b2okvqqnlgqn3" path="res://assets/sprites/tilemaps/house_layout.png" id="1_wo0nw"]
+[ext_resource type="PackedScene" uid="uid://bxgvi337b5b2m" path="res://scenes/interactables/bedroom_clock.tscn" id="2_jdj0b"]
+[ext_resource type="PackedScene" uid="uid://dhpb4alqh5mvi" path="res://scenes/characters/Player.tscn" id="2_v8fno"]
+[ext_resource type="PackedScene" uid="uid://cnnua8s7arfu8" path="res://scenes/interactables/bedroom_door.tscn" id="4_7dj6g"]
+[ext_resource type="PackedScene" uid="uid://dt3gvpnq8yy0y" path="res://scenes/interactables/bedroom_window.tscn" id="5_bqn6p"]
+[ext_resource type="PackedScene" uid="uid://bqr2mqu3ysc7m" path="res://scenes/interactables/bed_interactable.tscn" id="6_25p8e"]
+[ext_resource type="PackedScene" uid="uid://cdevahs2k08fc" path="res://scenes/interactables/trash_can.tscn" id="7_8pq40"]
+[ext_resource type="PackedScene" uid="uid://vrbj7s5e1bpn" path="res://scenes/interactables/HallwayDoortoMCRoom.tscn" id="7_y554i"]
+[ext_resource type="Script" path="res://scripts/interactables/HallwayDoortoStepSisRoom.gd" id="8_1am0s"]
+[ext_resource type="PackedScene" uid="uid://c157sm4o7eyod" path="res://interaction/interaction area/interaction_area.tscn" id="9_1xbt6"]
+[ext_resource type="Script" path="res://scripts/interactables/HallwayDoortoParentRoom.gd" id="10_ffi6v"]
+[ext_resource type="Script" path="res://scripts/interactables/HallwayDoortoMainRoom.gd" id="11_7p6kd"]
+[ext_resource type="Script" path="res://scripts/interactables/HallwayDoortoBathroom.gd" id="12_4w702"]
+[ext_resource type="Script" path="res://scripts/interactables/StepSisDoortoHallway.gd" id="13_t2urk"]
+[ext_resource type="Script" path="res://scripts/interactables/StepParentsDoortoHallway.gd" id="14_8n557"]
+[ext_resource type="Script" path="res://scripts/interactables/BathroomDoortoHallway.gd" id="15_5d12w"]
+[ext_resource type="Script" path="res://scripts/interactables/MainRoomDoortoHallway.gd" id="16_sa7de"]
+[ext_resource type="Script" path="res://scripts/interactables/MainRoomDoortoOutside.gd" id="17_gtx4e"]
+
+[sub_resource type="Gradient" id="Gradient_gd20k"]
+offsets = PackedFloat32Array(0.344156, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rh4il"]
+noise_type = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0ibrr"]
+width = 11
+height = 37
+in_3d_space = true
+color_ramp = SubResource("Gradient_gd20k")
+noise = SubResource("FastNoiseLite_rh4il")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n77gi"]
+size = Vector2(20, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57jfh"]
+size = Vector2(16, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mjpg"]
+size = Vector2(6, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viycw"]
+size = Vector2(16, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmeyy"]
+size = Vector2(16, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7hau"]
+size = Vector2(6, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0qr8"]
+size = Vector2(20, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki02f"]
+size = Vector2(6, 16)
+
+[node name="InsideHouse" type="Node2D"]
+position = Vector2(0, -3)
+
+[node name="MC_Bedroom" type="Node2D" parent="."]
+
+[node name="MC_Bedroom_sprite" type="Sprite2D" parent="MC_Bedroom"]
+texture = ExtResource("1_wo0nw")
+region_enabled = true
+region_rect = Rect2(13, 13, 70, 128)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MC_Bedroom"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MC_Bedroom/StaticBody2D"]
+position = Vector2(-40, 3)
+polygon = PackedVector2Array(8, -2, 5, -2, 5, -67, 75, -67, 75, 61, 5, 61, 5, -2, 8, -2, 8, 48, 56, 48, 56, 58, 72, 58, 72, 15, 60, 15, 60, -1, 56, -1, 56, -37, 42, -37, 42, -29, 31, -29, 31, -8, 8, -8)
+
+[node name="BedroomClock" parent="MC_Bedroom" instance=ExtResource("2_jdj0b")]
+position = Vector2(-3, -30)
+
+[node name="BedroomDoor" parent="MC_Bedroom" instance=ExtResource("4_7dj6g")]
+position = Vector2(24, 58)
+
+[node name="CollisionShape2D" parent="MC_Bedroom/BedroomDoor/InteractionArea" index="0"]
+position = Vector2(0, 0.25)
+
+[node name="BedroomWindow" parent="MC_Bedroom" instance=ExtResource("5_bqn6p")]
+position = Vector2(8, -43)
+
+[node name="WindowLight" type="PointLight2D" parent="MC_Bedroom/BedroomWindow"]
+position = Vector2(-5.96046e-08, 25.5)
+scale = Vector2(1.09091, 1.37838)
+energy = 0.35
+shadow_enabled = true
+texture = SubResource("NoiseTexture2D_0ibrr")
+
+[node name="BedInteractable" parent="MC_Bedroom" instance=ExtResource("6_25p8e")]
+position = Vector2(-20, -19)
+
+[node name="TrashCan" parent="MC_Bedroom" instance=ExtResource("7_8pq40")]
+position = Vector2(25, 12)
+
+[node name="Hallway" type="Node2D" parent="."]
+position = Vector2(85, 192)
+
+[node name="Hallway_sprite" type="Sprite2D" parent="Hallway"]
+texture = ExtResource("1_wo0nw")
+region_enabled = true
+region_rect = Rect2(13, 157, 240, 80)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Hallway"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hallway/StaticBody2D"]
+polygon = PackedVector2Array(-120, 30, -120, -40, 120, -40, 120, 40, -120, 40, -120, 30, -119, 29, -117, 27, -101, 27, -101, 37, -85, 37, -85, 27, 117, 27, 117, 11, 107, 11, 107, -10, -117, -10, -117, 27)
+
+[node name="HallwayDoortoMcRoom" parent="Hallway" instance=ExtResource("7_y554i")]
+position = Vector2(-61, -7.5)
+
+[node name="HallwayDoortoStepSisRoom" type="Node2D" parent="Hallway"]
+position = Vector2(-29, -7.5)
+script = ExtResource("8_1am0s")
+
+[node name="InteractionArea" parent="Hallway/HallwayDoortoStepSisRoom" instance=ExtResource("9_1xbt6")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/HallwayDoortoStepSisRoom/InteractionArea"]
+shape = SubResource("RectangleShape2D_n77gi")
+
+[node name="HallwayDoortoParentRoom" type="Node2D" parent="Hallway"]
+position = Vector2(83, -7.5)
+script = ExtResource("10_ffi6v")
+
+[node name="InteractionArea" parent="Hallway/HallwayDoortoParentRoom" instance=ExtResource("9_1xbt6")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/HallwayDoortoParentRoom/InteractionArea"]
+shape = SubResource("RectangleShape2D_n77gi")
+
+[node name="HallwayDoortoMainRoom" type="Node2D" parent="Hallway"]
+position = Vector2(-93, 34.5)
+script = ExtResource("11_7p6kd")
+
+[node name="InteractionArea" parent="Hallway/HallwayDoortoMainRoom" instance=ExtResource("9_1xbt6")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/HallwayDoortoMainRoom/InteractionArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_57jfh")
+
+[node name="HallwayDoortoBathroom" type="Node2D" parent="Hallway"]
+position = Vector2(114, 19)
+script = ExtResource("12_4w702")
+
+[node name="InteractionArea" parent="Hallway/HallwayDoortoBathroom" instance=ExtResource("9_1xbt6")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/HallwayDoortoBathroom/InteractionArea"]
+shape = SubResource("RectangleShape2D_3mjpg")
+
+[node name="StepSis_Bedroom" type="Node2D" parent="."]
+position = Vector2(232, 0)
+
+[node name="StepSis_Bedroom_sprite" type="Sprite2D" parent="StepSis_Bedroom"]
+texture = ExtResource("1_wo0nw")
+region_enabled = true
+region_rect = Rect2(93, 13, 70, 128)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StepSis_Bedroom"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StepSis_Bedroom/StaticBody2D"]
+polygon = PackedVector2Array(-32, 13, -35, 13, -35, 64, 35, 64, 35, -64, -35, -64, -35, 13, -32, 13, -32, 2, -16, 2, -16, -34, -2, -34, -2, -27, 9, -27, 9, -5, 32, -5, 32, 51, -16, 51, -16, 61, -32, 61)
+
+[node name="StepSisDoortoHallway" type="Node2D" parent="StepSis_Bedroom"]
+position = Vector2(-24, 58)
+script = ExtResource("13_t2urk")
+
+[node name="InteractionArea" parent="StepSis_Bedroom/StepSisDoortoHallway" instance=ExtResource("9_1xbt6")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StepSis_Bedroom/StepSisDoortoHallway/InteractionArea"]
+shape = SubResource("RectangleShape2D_viycw")
+
+[node name="StepSisWindow" type="Node2D" parent="StepSis_Bedroom"]
+
+[node name="WindowLight" type="PointLight2D" parent="StepSis_Bedroom/StepSisWindow"]
+position = Vector2(-8, -18.5)
+scale = Vector2(1.09091, 1.37838)
+energy = 0.35
+shadow_enabled = true
+texture = SubResource("NoiseTexture2D_0ibrr")
+
+[node name="StepParents_Bedroom" type="Node2D" parent="."]
+position = Vector2(472, 0)
+
+[node name="StepParents_Bedroom_sprite" type="Sprite2D" parent="StepParents_Bedroom"]
+texture = ExtResource("1_wo0nw")
+region_enabled = true
+region_rect = Rect2(173, 13, 86, 128)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StepParents_Bedroom"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StepParents_Bedroom/StaticBody2D"]
+polygon = PackedVector2Array(-40, 32, -43, 32, -43, 64, 43, 64, 43, -64, -43, -64, -43, 32, -40, 32, -40, -34, 40, -34, 40, 51, 8, 51, 8, 61, -8, 61, -8, 51, -40, 51)
+
+[node name="StepParentsDoortoHallway" type="Node2D" parent="StepParents_Bedroom"]
+position = Vector2(0, 58)
+script = ExtResource("14_8n557")
+
+[node name="InteractionArea" parent="StepParents_Bedroom/StepParentsDoortoHallway" instance=ExtResource("9_1xbt6")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StepParents_Bedroom/StepParentsDoortoHallway/InteractionArea"]
+shape = SubResource("RectangleShape2D_hmeyy")
+
+[node name="Bathroom" type="Node2D" parent="."]
+position = Vector2(411, 200)
+
+[node name="Bathroom_sprite" type="Sprite2D" parent="Bathroom"]
+texture = ExtResource("1_wo0nw")
+region_enabled = true
+region_rect = Rect2(275, 141, 80, 86)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bathroom"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bathroom/StaticBody2D"]
+polygon = PackedVector2Array(-29, 40, -29, 43, -40, 43, -40, -43, 40, -43, 40, 43, -29, 43, -29, 40, 37, 40, 37, -13, -27, -13, -27, 24, -37, 24, -37, 40)
+
+[node name="BathroomDoortoHallway" type="Node2D" parent="Bathroom"]
+position = Vector2(-32, 32)
+script = ExtResource("15_5d12w")
+
+[node name="InteractionArea" parent="Bathroom/BathroomDoortoHallway" instance=ExtResource("9_1xbt6")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bathroom/BathroomDoortoHallway/InteractionArea"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_o7hau")
+
+[node name="Main_Room" type="Node2D" parent="."]
+position = Vector2(37, 400)
+
+[node name="Main_Room_sprite" type="Sprite2D" parent="Main_Room"]
+texture = ExtResource("1_wo0nw")
+region_enabled = true
+region_rect = Rect2(13, 253, 144, 118)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Main_Room"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Main_Room/StaticBody2D"]
+polygon = PackedVector2Array(-69, -15, -72, -15, -72, 59, 72, 59, 72, -59, -72, -59, -72, -15, -69, -15, -69, -29, 59, -29, 59, 24, 69, 24, 69, 40, 59, 40, 59, 56, -69, 56)
+
+[node name="MainRoomDoortoHallway" type="Node2D" parent="Main_Room"]
+position = Vector2(-45, -24)
+script = ExtResource("16_sa7de")
+
+[node name="InteractionArea" parent="Main_Room/MainRoomDoortoHallway" instance=ExtResource("9_1xbt6")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main_Room/MainRoomDoortoHallway/InteractionArea"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_w0qr8")
+
+[node name="MainRoomDoortoOutside" type="Node2D" parent="Main_Room"]
+position = Vector2(64, 32)
+script = ExtResource("17_gtx4e")
+
+[node name="InteractionArea" parent="Main_Room/MainRoomDoortoOutside" instance=ExtResource("9_1xbt6")]
+action_name = "Leave House"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main_Room/MainRoomDoortoOutside/InteractionArea"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_ki02f")
+
+[node name="Player" parent="." instance=ExtResource("2_v8fno")]
+position = Vector2(-3, -23)
+
+[editable path="MC_Bedroom/BedroomDoor"]

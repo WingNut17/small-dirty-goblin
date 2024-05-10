@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var health = 100
 const DIALOGUE_BOX = preload("res://scenes/dialogue_box.tscn")
 
 
@@ -12,30 +13,36 @@ var last_direction = Vector2()
 var input_vector = Vector2()
 
 
+
 func _physics_process(_delta):
-	# Get the left/right up/down input directions
-	input_vector = Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"), Input.get_action_strength("down") - Input.get_action_strength("up"))
+	if health > 0:
+		# Get the left/right up/down input directions
+		input_vector = Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"), Input.get_action_strength("down") - Input.get_action_strength("up"))
+			
+		# if theyre going diagonally, normalize
+		if input_vector.length() > 1:
+			input_vector = input_vector.normalized()
 		
-	# if theyre going diagonally, normalize
-	if input_vector.length() > 1:
-		input_vector = input_vector.normalized()
-	
-	# motion based on input	
-	motion = input_vector * SPEED
-	
-	# if a button is pressed
-	if input_vector:
-		velocity.x = motion[0] * SPEED
-		velocity.y = motion[1] * SPEED
-		last_direction = input_vector
-	
+		# motion based on input	
+		motion = input_vector * SPEED
+		
+		# if a button is pressed
+		if input_vector:
+			velocity.x = motion[0] * SPEED
+			velocity.y = motion[1] * SPEED
+			last_direction = input_vector
+		
+		else:
+			velocity.x = move_toward(motion[0], 0, SPEED)
+			velocity.y = move_toward(motion[1], 0, SPEED)
+		
+		
+		move_and_slide()
+		handle_animations()
 	else:
-		velocity.x = move_toward(motion[0], 0, SPEED)
-		velocity.y = move_toward(motion[1], 0, SPEED)
-	
-	
-	move_and_slide()
-	handle_animations()
+		await get_tree().create_timer(2).timeout
+		get_tree().reload_current_scene()
+		health = 100
 
 func handle_animations():
 	var animation = "idle"

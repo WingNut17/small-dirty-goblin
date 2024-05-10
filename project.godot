@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="small dirty goblin"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/inside_house.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
 
 [autoload]
 
 InteractionManager="*res://interaction/InteractionManager.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 
