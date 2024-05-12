@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var health = 100
-const DIALOGUE_BOX = preload("res://scenes/dialogue_box.tscn")
+@onready var dialogue_box = $Control/Dialogue_Box
+@onready var animation_player = $AnimationPlayer
 
 
 # character speed
@@ -12,7 +13,9 @@ var motion = Vector2()
 var last_direction = Vector2()
 var input_vector = Vector2()
 
-
+func _ready():
+	dialogue_box.hide()
+	animation_player.play("fade_in")
 
 func _physics_process(_delta):
 	if health > 0:
@@ -43,6 +46,12 @@ func _physics_process(_delta):
 		await get_tree().create_timer(2).timeout
 		get_tree().reload_current_scene()
 		health = 100
+		
+	if animation_player.is_playing():
+		velocity.x = 0
+		velocity.y = 0
+		move_and_slide()
+	
 
 func handle_animations():
 	var animation = "idle"
