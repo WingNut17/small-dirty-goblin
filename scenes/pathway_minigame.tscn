@@ -1,0 +1,171 @@
+[gd_scene load_steps=19 format=3 uid="uid://dysebyysorf2r"]
+
+[ext_resource type="PackedScene" uid="uid://drod4w0tqmc8a" path="res://scenes/pathway_paralax.tscn" id="1_n7keu"]
+[ext_resource type="Script" path="res://scripts/pathway_minigame.gd" id="1_wtgkn"]
+[ext_resource type="Script" path="res://scripts/LimitedPlayer.gd" id="2_ga0bq"]
+[ext_resource type="SpriteFrames" uid="uid://c8u5yp4rodmg2" path="res://tres/PlayerAnimations.tres" id="3_nn0fl"]
+[ext_resource type="Texture2D" uid="uid://cgax7v8o4jo42" path="res://assets/sprites/particles/ground_puff.png" id="4_lgffe"]
+[ext_resource type="Curve" uid="uid://cykusnbejo6ga" path="res://tres/blood_explosion_scale_curve.tres" id="5_osd6a"]
+[ext_resource type="FontFile" uid="uid://duvtgywr76qct" path="res://assets/fonts/PixeloidSansBold-PKnYd.ttf" id="6_26ipg"]
+[ext_resource type="PackedScene" uid="uid://cfgkp2w2mnhr1" path="res://scenes/characters/goblin_minigame.tscn" id="7_04ljj"]
+[ext_resource type="AudioStream" uid="uid://bb37eo2ma6hkm" path="res://assets/sound effects/beep.wav" id="7_e1n1k"]
+[ext_resource type="AudioStream" uid="uid://dh38h1d5gadxp" path="res://assets/sound effects/death.wav" id="8_np7yu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pmjg"]
+size = Vector2(96, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e8rq"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kepur"]
+radius = 5.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dqrfs"]
+normal = Vector2(1, 0)
+distance = -47.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_duj5y"]
+normal = Vector2(-1, 0)
+distance = -47.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_am0op"]
+normal = Vector2(0, 1)
+distance = -42.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dj0c7"]
+normal = Vector2(0, 1)
+distance = -121.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bq5yj"]
+distance = -92.0
+
+[node name="PathwayMinigame" type="Node2D"]
+script = ExtResource("1_wtgkn")
+
+[node name="Node2D" parent="." instance=ExtResource("1_n7keu")]
+
+[node name="Next_Screen_Detector" type="Area2D" parent="."]
+position = Vector2(0, -100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next_Screen_Detector"]
+shape = SubResource("RectangleShape2D_7pmjg")
+
+[node name="LimitedPlayer" type="CharacterBody2D" parent="."]
+top_level = true
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("2_ga0bq")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="LimitedPlayer"]
+position = Vector2(0, 8)
+texture = ExtResource("4_lgffe")
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
+angular_velocity_max = 100.0
+scale_amount_curve = ExtResource("5_osd6a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LimitedPlayer"]
+sprite_frames = ExtResource("3_nn0fl")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimitedPlayer"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_0e8rq")
+
+[node name="Player" type="Area2D" parent="LimitedPlayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimitedPlayer/Player"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_kepur")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
+
+[node name="Goblin" parent="." instance=ExtResource("7_04ljj")]
+position = Vector2(229, 0)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Left_Wall" type="StaticBody2D" parent="Walls"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left_Wall"]
+shape = SubResource("WorldBoundaryShape2D_dqrfs")
+
+[node name="Right_Wall" type="StaticBody2D" parent="Walls"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right_Wall"]
+shape = SubResource("WorldBoundaryShape2D_duj5y")
+
+[node name="Top_Wall" type="StaticBody2D" parent="Walls"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top_Wall"]
+shape = SubResource("WorldBoundaryShape2D_am0op")
+
+[node name="Second_Top_Wall" type="StaticBody2D" parent="Walls"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Second_Top_Wall"]
+shape = SubResource("WorldBoundaryShape2D_dj0c7")
+
+[node name="Bottom_Wall" type="StaticBody2D" parent="Walls"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom_Wall"]
+shape = SubResource("WorldBoundaryShape2D_bq5yj")
+
+[node name="UI" type="Control" parent="."]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -165.0
+offset_top = -93.0
+offset_right = 165.0
+offset_bottom = 93.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="UI/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_26ipg")
+theme_override_font_sizes/font_size = 18
+text = "Hitpoints: "
+vertical_alignment = 1
+
+[node name="Beep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_e1n1k")
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_np7yu")
+
+[connection signal="area_entered" from="Next_Screen_Detector" to="." method="_on_next_screen_detector_area_entered"]
+[connection signal="area_entered" from="LimitedPlayer/Player" to="." method="_on_area_2d_area_entered"]
+
+[editable path="Node2D"]

@@ -2,22 +2,20 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var health = 100
-@onready var dialogue_box = $Control/Dialogue_Box
 @onready var animation_player = $AnimationPlayer
 
 
 # character speed
-const SPEED = 7.5
+const SPEED = 450
 
 var motion = Vector2()
 var last_direction = Vector2()
 var input_vector = Vector2()
 
 func _ready():
-	dialogue_box.hide()
 	animation_player.play("fade_in")
 
-func _physics_process(_delta):
+func _process(delta):
 	if health > 0:
 		# Get the left/right up/down input directions
 		input_vector = Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"), Input.get_action_strength("down") - Input.get_action_strength("up"))
@@ -27,17 +25,17 @@ func _physics_process(_delta):
 			input_vector = input_vector.normalized()
 		
 		# motion based on input	
-		motion = input_vector * SPEED
-		
+		motion = input_vector * SPEED * delta
+
 		# if a button is pressed
 		if input_vector:
-			velocity.x = motion[0] * SPEED
-			velocity.y = motion[1] * SPEED
+			velocity.x = motion[0] * SPEED * delta
+			velocity.y = motion[1] * SPEED * delta
 			last_direction = input_vector
 		
 		else:
-			velocity.x = move_toward(motion[0], 0, SPEED)
-			velocity.y = move_toward(motion[1], 0, SPEED)
+			velocity.x = move_toward(motion[0], 0, SPEED * delta)
+			velocity.y = move_toward(motion[1], 0, SPEED * delta)
 		
 		
 		move_and_slide()

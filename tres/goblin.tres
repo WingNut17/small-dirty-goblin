@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://b6k3e4drea2fs"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_71x3g"]
+
+[resource]
+script = ExtResource("1_71x3g")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-340, 240),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "It seems youve found out about my living conditions Tobio...
+",
+"offset": Vector2(20, 240),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "How do you know my name?"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "I want you out of here!"
+}
+},
+"size": Vector2(300, 304.436),
+"speaker": "Goblin"
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = ""

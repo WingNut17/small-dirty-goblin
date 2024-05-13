@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://br7xchaqbb0qu"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_lveay"]
+
+[resource]
+script = ExtResource("1_lveay")
+starts = {
+"ToastMonologue": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-80, 160),
+"start_id": "ToastMonologue"
+},
+"1_1": {
+"dialogue": "Ah, buttered toast. The simplest of pleasures, yet so deeply satisfying. It's a magical combination of such humble ingredients, bread and butter. ",
+"offset": Vector2(120, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": -1
+},
+"1_2": {
+"dialogue": "Which come together to create a symphony of flavours.
+A slice of freshly toasted bread, warm and golden brown. 
+",
+"offset": Vector2(460, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": -1
+},
+"1_3": {
+"dialogue": "Its crispy edges give way to a soft, fluffy center. As I spread a generous layer of creamy butter over it, the heat from the toast melts the butter just enough to create a rich coating.
+",
+"offset": Vector2(800, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": -1
+},
+"1_4": {
+"dialogue": "*crunch*
+",
+"offset": Vector2(1140, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": -1
+},
+"1_5": {
+"dialogue": "Mmmm, the first bite is pure bliss… The crunch of the toast, the smoothness of the butter, the subtle saltiness mixed with the slight sweetness of the bread. ",
+"offset": Vector2(1480, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": -1
+},
+"1_6": {
+"dialogue": "It's a sensory experience like no other. And it's not just about taste; it's about comfort, about nostalgia.",
+"offset": Vector2(1820, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": -1
+},
+"1_7": {
+"dialogue": "Buttered toast is more than just a quick breakfast or snack. It's a moment of pause in a busy day, a simple pleasure that reminds us to slow down and savour the little things. ",
+"offset": Vector2(2160, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": -1
+},
+"1_8": {
+"dialogue": "It's a reminder that joy can be found in the most ordinary of -",
+"offset": Vector2(2500, 160),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": -1
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = ""

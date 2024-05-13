@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxen75vtfq88g"]
+[gd_scene load_steps=11 format=3 uid="uid://dxen75vtfq88g"]
 
 [ext_resource type="Script" path="res://scripts/next_room.gd" id="1_vdjes"]
 [ext_resource type="TileSet" uid="uid://ccflfsmy4poma" path="res://tres/outside_tilemap.tres" id="2_6xohh"]
@@ -11,10 +11,13 @@
 size = Vector2(464, 31.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pgp3"]
-size = Vector2(400, 94)
+size = Vector2(400, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_401mg"]
 size = Vector2(20, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yn5no"]
+size = Vector2(20, 161)
 
 [node name="Next room" type="Node2D"]
 y_sort_enabled = true
@@ -59,34 +62,38 @@ shape = SubResource("RectangleShape2D_fegqe")
 
 [node name="Houses" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses"]
-position = Vector2(9, -84)
-shape = SubResource("RectangleShape2D_3pgp3")
-
 [node name="Houses" type="Sprite2D" parent="Houses"]
 position = Vector2(-152, -82)
 texture = ExtResource("4_kgqra")
 
-[node name="House2" type="Sprite2D" parent="Houses/Houses"]
-position = Vector2(80, 0)
+[node name="House2" type="Sprite2D" parent="Houses"]
+position = Vector2(-72, -82)
 texture = ExtResource("4_kgqra")
 
-[node name="House3" type="Sprite2D" parent="Houses/Houses"]
-position = Vector2(160, 0)
+[node name="House3" type="Sprite2D" parent="Houses"]
+position = Vector2(8, -82)
 texture = ExtResource("4_kgqra")
 
-[node name="House5" type="Sprite2D" parent="Houses/Houses"]
-position = Vector2(240, 0)
+[node name="House5" type="Sprite2D" parent="Houses"]
+position = Vector2(88, -82)
 texture = ExtResource("4_kgqra")
 
-[node name="House4" type="Sprite2D" parent="Houses/Houses"]
-position = Vector2(320, 0)
+[node name="House4" type="Sprite2D" parent="Houses"]
+position = Vector2(168, -82)
 texture = ExtResource("4_kgqra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses"]
+visible = false
+position = Vector2(8, -84.5)
+shape = SubResource("RectangleShape2D_3pgp3")
 
 [node name="Player" parent="." instance=ExtResource("2_hli0h")]
 z_index = 2
 z_as_relative = false
 position = Vector2(-151, -31)
+
+[node name="DialogueBox" parent="Player/Control" index="0"]
+visible = false
 
 [node name="DoortoInsideHouse" type="Node2D" parent="."]
 position = Vector2(-151, -37)
@@ -99,5 +106,16 @@ action_name = "Enter Home"
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_401mg")
 
+[node name="Next_Level_Area" type="Area2D" parent="."]
+position = Vector2(191, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next_Level_Area"]
+position = Vector2(0, 61.5)
+shape = SubResource("RectangleShape2D_yn5no")
+
 [connection signal="area_entered" from="Road2/Road" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Road2/Road2" to="." method="_on_road_2_area_entered"]
+[connection signal="area_entered" from="Next_Level_Area" to="." method="_on_next_level_area_area_entered"]
+
+[editable path="Player"]
+[editable path="Player/Control"]

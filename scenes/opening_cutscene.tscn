@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bv4wwckj5arwa"]
 
-[ext_resource type="Script" path="res://scenes/opening_cutscene.gd" id="1_3oudy"]
+[ext_resource type="Script" path="res://scripts/opening_cutscene.gd" id="1_3oudy"]
 [ext_resource type="Texture2D" uid="uid://b2okvqqnlgqn3" path="res://assets/sprites/tilemaps/house_layout.png" id="1_l36tb"]
 [ext_resource type="Texture2D" uid="uid://dgyo807q8uggd" path="res://assets/sprites/characters/sleeping_cutscene.png" id="2_a22xk"]
 [ext_resource type="Texture2D" uid="uid://c810f72p1y8ap" path="res://assets/sprites/BedSheet.png" id="3_vwm7o"]
@@ -340,6 +340,7 @@ position = Vector2(-19, -28)
 zoom = Vector2(15, 15)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-19, -27)
 scale = Vector2(2.03125, 1.42187)
 texture = SubResource("GradientTexture2D_2g14c")

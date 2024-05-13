@@ -1,0 +1,50 @@
+[gd_scene load_steps=13 format=3 uid="uid://bw0tpdgdgy8id"]
+
+[ext_resource type="FontFile" uid="uid://be51tk2mb74vb" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="1_jvsxj"]
+[ext_resource type="Texture2D" uid="uid://c84okoyiu43fw" path="res://assets/sprites/DialogueBox.png" id="2_bdnbn"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="3_cvb7n"]
+[ext_resource type="Resource" uid="uid://br7xchaqbb0qu" path="res://toast monologue.tres" id="4_c3xeo"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_5cknu"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="6_54e5d"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="7_e3slq"]
+
+[sub_resource type="Theme" id="Theme_r2th1"]
+default_font = ExtResource("1_jvsxj")
+default_font_size = 9
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxb23"]
+texture = ExtResource("2_bdnbn")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_0bd63"]
+script = ExtResource("5_5cknu")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_32ang"]
+script = ExtResource("6_54e5d")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_as40x"]
+script = ExtResource("7_e3slq")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_r2th1")
+
+[node name="DialogueBox" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 324.0
+offset_bottom = 68.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mxb23")
+script = ExtResource("3_cvb7n")
+data = ExtResource("4_c3xeo")
+skip_input_action = "interact"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_0bd63"), SubResource("RichTextEffect_32ang"), SubResource("RichTextEffect_as40x")])
+next_icon = null
+options_alignment = 1

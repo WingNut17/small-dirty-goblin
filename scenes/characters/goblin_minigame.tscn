@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfgkp2w2mnhr1"]
+
+[ext_resource type="Script" path="res://scripts/goblin.gd" id="1_ylu3j"]
+[ext_resource type="Texture2D" uid="uid://bggg680l33ah6" path="res://assets/sprites/characters/goblin sprite sheet.png" id="2_f5yvf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csipb"]
+atlas = ExtResource("2_f5yvf")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pits"]
+atlas = ExtResource("2_f5yvf")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kpdh"]
+atlas = ExtResource("2_f5yvf")
+region = Rect2(32, 0, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jd3la"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csipb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pits")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kpdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pits")
+}],
+"loop": true,
+"name": &"run_forward",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6m81"]
+radius = 6.0
+
+[node name="Goblin" type="Node2D"]
+script = ExtResource("1_ylu3j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jd3la")
+animation = &"run_forward"
+frame_progress = 0.615133
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_v6m81")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

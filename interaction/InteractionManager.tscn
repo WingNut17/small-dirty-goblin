@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://interaction/InteractionManager.gd" id="1_itpcm"]
 [ext_resource type="Shader" path="res://shaders/InteractionManager.gdshader" id="2_mnegv"]
-[ext_resource type="FontFile" uid="uid://cse2kdqv7assb" path="res://assets/fonts/PixeloidMono-d94EV.ttf" id="2_ts8jf"]
+[ext_resource type="FontFile" uid="uid://be51tk2mb74vb" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="3_vn3pk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8b15"]
 shader = ExtResource("2_mnegv")
@@ -25,7 +25,7 @@ offset_bottom = 12.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_ts8jf")
+theme_override_fonts/font = ExtResource("3_vn3pk")
 theme_override_font_sizes/font_size = 9
 text = "?"
 horizontal_alignment = 1

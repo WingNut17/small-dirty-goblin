@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://r3ryg2we762b"]
+[gd_scene load_steps=35 format=3 uid="uid://r3ryg2we762b"]
 
 [ext_resource type="Texture2D" uid="uid://b2okvqqnlgqn3" path="res://assets/sprites/tilemaps/house_layout.png" id="1_wo0nw"]
 [ext_resource type="PackedScene" uid="uid://bxgvi337b5b2m" path="res://scenes/interactables/bedroom_clock.tscn" id="2_jdj0b"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://scripts/interactables/BathroomDoortoHallway.gd" id="15_5d12w"]
 [ext_resource type="Script" path="res://scripts/interactables/MainRoomDoortoHallway.gd" id="16_sa7de"]
 [ext_resource type="Script" path="res://scripts/interactables/MainRoomDoortoOutside.gd" id="17_gtx4e"]
+[ext_resource type="PackedScene" uid="uid://chwxw0nktlltw" path="res://scenes/characters/goblin.tscn" id="19_kprco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fr7a"]
 size = Vector2(11, 13)
@@ -91,6 +92,9 @@ position = Vector2(-3, -30)
 [node name="CollisionShape2D" parent="MC_Bedroom/BedroomClock/InteractionArea" index="0"]
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_4fr7a")
+
+[node name="Goblin" parent="MC_Bedroom" instance=ExtResource("19_kprco")]
+position = Vector2(-21, 39)
 
 [node name="BedroomDoor" parent="MC_Bedroom" instance=ExtResource("4_7dj6g")]
 position = Vector2(24, 58)

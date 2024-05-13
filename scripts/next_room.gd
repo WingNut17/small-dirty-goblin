@@ -40,3 +40,10 @@ func _on_road_2_area_entered(_area):
 	await get_tree().create_timer(2).timeout
 	
 	truck_spawn2 = false
+
+
+
+func _on_next_level_area_area_entered(area):
+	print(area.name)
+	if area.name == "Player":
+		get_tree().change_scene_to_file("res://scenes/pathway_minigame.tscn")

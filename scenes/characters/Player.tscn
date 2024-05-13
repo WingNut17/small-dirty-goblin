@@ -1,165 +1,14 @@
-[gd_scene load_steps=30 format=3 uid="uid://dhpb4alqh5mvi"]
+[gd_scene load_steps=13 format=3 uid="uid://dhpb4alqh5mvi"]
 
-[ext_resource type="Texture2D" uid="uid://ba0e6xeav3iyp" path="res://assets/sprites/characters/mc_run.png" id="1_ddcwm"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_x4ulb"]
-[ext_resource type="FontFile" uid="uid://cse2kdqv7assb" path="res://assets/fonts/PixeloidMono-d94EV.ttf" id="3_2s3m1"]
-[ext_resource type="Texture2D" uid="uid://c84okoyiu43fw" path="res://assets/sprites/DialogueBox.png" id="4_ch78v"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o6mda"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(16, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1sq4x"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(144, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m53vn"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(48, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ucmvh"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(160, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_miaf1"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(112, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e07pr"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(176, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tthmh"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(64, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jfl4o"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(80, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xsqn2"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(0, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e284n"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(16, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7w5v5"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(32, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pq0md"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(96, 0, 16, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phpst"]
-atlas = ExtResource("1_ddcwm")
-region = Rect2(128, 0, 16, 18)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_esaby"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o6mda")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1sq4x")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m53vn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ucmvh")
-}],
-"loop": true,
-"name": &"idle_back",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_miaf1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e07pr")
-}],
-"loop": true,
-"name": &"idle_side",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tthmh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m53vn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jfl4o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m53vn")
-}],
-"loop": true,
-"name": &"run_back",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xsqn2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e284n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7w5v5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e284n")
-}],
-"loop": true,
-"name": &"run_forward",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pq0md")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_miaf1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phpst")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_miaf1")
-}],
-"loop": true,
-"name": &"run_side",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://c8u5yp4rodmg2" path="res://tres/PlayerAnimations.tres" id="2_w5o4u"]
+[ext_resource type="PackedScene" uid="uid://bw0tpdgdgy8id" path="res://scenes/characters/dialogue.tscn" id="4_k5dvy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6seps"]
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08hiv"]
 radius = 4.0
-
-[sub_resource type="Theme" id="Theme_vwfqr"]
-default_font = ExtResource("3_2s3m1")
-default_font_size = 9
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6bwx"]
-texture = ExtResource("4_ch78v")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
 
 [sub_resource type="Animation" id="Animation_7wwv2"]
 length = 0.001
@@ -229,8 +78,8 @@ collision_layer = 2
 script = ExtResource("1_x4ulb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_esaby")
-animation = &"idle"
+sprite_frames = ExtResource("2_w5o4u")
+animation = &"run_back"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -241,43 +90,11 @@ shape = SubResource("CircleShape2D_6seps")
 zoom = Vector2(3.5, 3.5)
 position_smoothing_speed = 10.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Player" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_08hiv")
-
-[node name="Control" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -165.0
-offset_top = -93.0
-offset_right = 165.0
-offset_bottom = 93.0
-
-[node name="Dialogue_Box" type="MarginContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = -10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = -125
-
-[node name="Label" type="Label" parent="Control/Dialogue_Box"]
-texture_filter = 1
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-theme = SubResource("Theme_vwfqr")
-theme_override_colors/font_outline_color = Color(0, 0.00317848, 0.082825, 1)
-theme_override_constants/outline_size = 6
-theme_override_styles/normal = SubResource("StyleBoxTexture_a6bwx")
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -289,3 +106,9 @@ visible = false
 position = Vector2(1.44243e-05, 2.32458e-06)
 scale = Vector2(5.15625, 2.90625)
 texture = SubResource("CanvasTexture_4luxf")
+
+[node name="Control" parent="." instance=ExtResource("4_k5dvy")]
+offset_left = -162.0
+offset_top = 22.0
+offset_right = -162.0
+offset_bottom = 22.0
