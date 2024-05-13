@@ -5,13 +5,13 @@
 [resource]
 script = ExtResource("1_lveay")
 starts = {
-"ToastMonologue": &"0_1"
+"START": &"0_1"
 }
 nodes = {
 "0_1": {
 "link": &"1_1",
 "offset": Vector2(-80, 160),
-"start_id": "ToastMonologue"
+"start_id": "START"
 },
 "1_1": {
 "dialogue": "Ah, buttered toast. The simplest of pleasures, yet so deeply satisfying. It's a magical combination of such humble ingredients, bread and butter. ",
@@ -24,7 +24,33 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": -1
+"speaker": 0
+},
+"1_10": {
+"dialogue": "IVE BEEN MONOLOGUING FOR TOO LONG IM GONNA BE LATE!!",
+"offset": Vector2(460, 760),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_11": {
+"dialogue": "*grabs toast*",
+"offset": Vector2(800, 760),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
 },
 "1_2": {
 "dialogue": "Which come together to create a symphony of flavours.
@@ -39,7 +65,7 @@ A slice of freshly toasted bread, warm and golden brown.
 }
 },
 "size": Vector2(300, 240),
-"speaker": -1
+"speaker": 0
 },
 "1_3": {
 "dialogue": "Its crispy edges give way to a soft, fluffy center. As I spread a generous layer of creamy butter over it, the heat from the toast melts the butter just enough to create a rich coating.
@@ -53,7 +79,7 @@ A slice of freshly toasted bread, warm and golden brown.
 }
 },
 "size": Vector2(300, 240),
-"speaker": -1
+"speaker": 0
 },
 "1_4": {
 "dialogue": "*crunch*
@@ -66,12 +92,12 @@ A slice of freshly toasted bread, warm and golden brown.
 "text": ""
 }
 },
-"size": Vector2(300, 240),
-"speaker": -1
+"size": Vector2(300.001, 240),
+"speaker": 0
 },
 "1_5": {
 "dialogue": "Mmmm, the first bite is pure bliss… The crunch of the toast, the smoothness of the butter, the subtle saltiness mixed with the slight sweetness of the bread. ",
-"offset": Vector2(1480, 160),
+"offset": Vector2(120, 460),
 "options": {
 0: {
 "condition": {},
@@ -80,11 +106,11 @@ A slice of freshly toasted bread, warm and golden brown.
 }
 },
 "size": Vector2(300, 240),
-"speaker": -1
+"speaker": 0
 },
 "1_6": {
 "dialogue": "It's a sensory experience like no other. And it's not just about taste; it's about comfort, about nostalgia.",
-"offset": Vector2(1820, 160),
+"offset": Vector2(460, 460),
 "options": {
 0: {
 "condition": {},
@@ -93,11 +119,11 @@ A slice of freshly toasted bread, warm and golden brown.
 }
 },
 "size": Vector2(300, 240),
-"speaker": -1
+"speaker": 0
 },
 "1_7": {
 "dialogue": "Buttered toast is more than just a quick breakfast or snack. It's a moment of pause in a busy day, a simple pleasure that reminds us to slow down and savour the little things. ",
-"offset": Vector2(2160, 160),
+"offset": Vector2(800, 460),
 "options": {
 0: {
 "condition": {},
@@ -106,22 +132,35 @@ A slice of freshly toasted bread, warm and golden brown.
 }
 },
 "size": Vector2(300, 240),
-"speaker": -1
+"speaker": 0
 },
 "1_8": {
 "dialogue": "It's a reminder that joy can be found in the most ordinary of -",
-"offset": Vector2(2500, 160),
+"offset": Vector2(1140, 460),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300.001, 240),
+"speaker": 0
+},
+"1_9": {
+"dialogue": "FUCK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+"offset": Vector2(120, 760),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
 "text": ""
 }
 },
 "size": Vector2(300, 240),
-"speaker": -1
+"speaker": 0
 }
 }
 variables = {}
 strays = Array[String]([])
-characters = ""
+characters = "res://tres/Characters.tres"

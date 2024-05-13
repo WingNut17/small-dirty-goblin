@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var interaction_area = $InteractionArea
 @onready var player = $"../../Player"
+@onready var step_sis_doorto_hallway = $"../../StepSis_Bedroom/StepSisDoortoHallway"
 
 
 # Called when the node enters the scene tree for the first time.

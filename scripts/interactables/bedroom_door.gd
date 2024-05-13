@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var interaction_area = $InteractionArea
 @onready var player = $"../../Player"
+@onready var hallway_doorto_mc_room = $"../../Hallway/HallwayDoortoMcRoom"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,4 +12,4 @@ func _ready():
 
 # Changes the level when the door are is interacted with
 func _on_interact():
-	player.global_position = Vector2(24,185)
+	player.global_position = hallway_doorto_mc_room.global_position

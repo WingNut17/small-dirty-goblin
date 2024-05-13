@@ -112,3 +112,8 @@ offset_left = -162.0
 offset_top = 22.0
 offset_right = -162.0
 offset_bottom = 22.0
+
+[connection signal="dialogue_ended" from="Control/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]
+[connection signal="dialogue_started" from="Control/DialogueBox" to="." method="_on_dialogue_box_dialogue_started"]
+
+[editable path="Control"]

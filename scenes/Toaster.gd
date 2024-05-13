@@ -1,15 +1,14 @@
 extends Node2D
 
 @onready var interaction_area = $InteractionArea
-@onready var player = $"../../Player"
-@onready var hallway_doorto_bathroom = $"../../Hallway/HallwayDoortoBathroom"
-
+@onready var dialogue_box = $"../../Player/Control/DialogueBox"
+const TOAST_MONOLOGUE = preload("res://tres/toast monologue.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if interaction_area != null:
 		interaction_area.interact = Callable(self, "_on_interact")
-
-# Changes the level when the door are is interacted with
+	
 func _on_interact():
-	player.global_position = hallway_doorto_bathroom.global_position
+	dialogue_box.data = TOAST_MONOLOGUE
+	dialogue_box.start("START")
